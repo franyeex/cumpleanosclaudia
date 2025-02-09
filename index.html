@@ -1,294 +1,240 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Baruserona - Roleplay</title>
-  <link rel="stylesheet" href="styles.css">
-  <script src="scripts.js" defer></script>
+  <title>Caludia Alarcocks cumple anos</title>
+  <style>
+    body, html {
+      margin: 0;
+      padding: 0;
+      font-family: 'Consolas', monospace;
+      background: black;
+      color: white;
+      font-size: 16px;
+      height: 100%;
+      width: 100%;
+      overflow: hidden;
+      scroll-behavior: smooth;
+    }
+
+    #intro, #presentation-container {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      text-align: center;
+    }
+
+    #question {
+      font-size: 1.5rem;
+      margin-bottom: 10px;
+      position: relative;
+      overflow: hidden;
+      white-space: nowrap;
+      width: 0;
+      border-right: 2px solid white;
+      animation: typing 4s steps(100, end) forwards, blink 0.8s step-end infinite;
+    }
+
+    @keyframes typing {
+      from { width: 0; }
+      to { width: 100ch; }
+    }
+
+    @keyframes blink {
+      from, to { border-color: transparent; }
+      50% { border-color: white; }
+    }
+
+    #buttons {
+      display: flex;
+      gap: 10px;
+      margin-top: 10px;
+      opacity: 1;
+      animation: fadeIn 2s ease-in forwards 4s;
+    }
+
+    .btn {
+      font-family: 'Consolas', monospace;
+      font-size: 1rem;
+      font-weight: bold;
+      cursor: pointer;
+      background: transparent;
+      border: none;
+      color: white;
+      text-transform: uppercase;
+      outline: none;
+      padding: 5px 10px;
+      transition: transform 0.2s ease;
+    }
+
+    .btn.green {
+      color: #00ff00;
+    }
+
+    .btn.red {
+      color: #ff0000;
+    }
+
+    .btn:hover {
+      text-decoration: underline;
+      transform: scale(1.1);
+    }
+
+    #presentation-container {
+      display: none;
+      width: 100%;
+      height: 100%;
+    }
+
+    .slide {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      opacity: 0;
+      transform: scale(0.9);
+      animation: fadeIn 2s ease-in forwards 4s;
+      padding: 20px;
+    }
+
+    .slide img {
+      max-width: 40%;
+      max-height: 80%;
+      object-fit: contain;
+      margin-right: 20px;
+      margin-left: 120px;
+      opacity: 0;
+      transform: translateY(30px);
+      animation: fadeIn 2s ease-in forwards 4s;
+    }
+
+    .text-container {
+      flex: 1;
+      text-align: center;
+      font-size: 1.2rem;
+      opacity: 0;
+      margin-right: 30px;
+      transform: translateY(30px);
+      transition: opacity 2s ease-in-out 1.5s, transform 2s ease-in-out 1.5s;
+      color: white;
+      
+    }
+
+    .slide.show {
+      opacity: 1;
+      transform: scale(1);
+      transition: opacity 2s ease-in-out 1.5s, transform 2s ease-in-out 1.5s;
+    }
+
+    .slide.show img,
+    .slide.show .text-container {
+      opacity: 1;
+      transform: translateY(0);
+      transition: opacity 2s ease-in-out 1.5s, transform 2s ease-in-out 1.5s;
+    }
+
+
+    body {
+      background: #000;
+      background-image: radial-gradient(circle, rgba(0, 0, 0, 1) 1%, rgba(44, 0, 69, 1) 100%);
+    }
+
+  </style>
 </head>
 <body>
-  <header>
-    <div class="logo">
-      <img src="logo.png" alt="Logo Baruserona" />
-      <h1>Baruserona</h1>
+  <div id="intro">
+    <h1 id="question">Hola Claudia, si estás leyendo esto, es porque ya es 11 de febrero. Entonces, ¿quieres ver tu carta?</h1>
+    <div id="buttons">
+      <button class="btn green" onclick="startPresentation()">[ Sí ]</button>
+      <button class="btn red" onclick="alert('Dale a sí, pedazo de pringada')">[ No ]</button>
     </div>
-  </header>
+  </div>
 
+  <div id="presentation-container">
+    <div class="slide">
+      <img src="foto.jpeg" alt="Foto 1">
+      <div class="text-container">
+        <p>hola claudia,
 
-  <main>
-    <section id="sobre-nosotros">
-      <img src="sobre-nosotros.png" alt="Imagen de Costa Urbana" />
-      <p>Bienvenido a Baruserona, un servidor de roleplay hispanohablante en el juego "Emergency Response: Liberty County", que busca llevar el roleplay a otra galaxia.</p>
-    </section>
+          si estás leyendo esto es porque abriste un folio, escaneaste un código qr y, obviamente, le diste al botón de "sí". así que aquí estoy, escribiéndote algo que quería decirte desde hace tiempo y aprovechando la ocasión perfecta: tu cumpleaños.
+          
+          primero, quiero desearte un feliz cumpleaños. en serio, espero que este día esté lleno de cosas buenas, que disfrutes desde el primer momento hasta el último y que te rodees de las personas que más quieres (y que te quieren, porque créeme, hay muchas). te lo mereces, porque eres alguien especial que, de una manera u otra, deja huella en todo lo que hace. no sé si te das cuenta, pero tienes una forma de hacer que todo a tu alrededor sea un poco más fácil, más llevadero, incluso sin intentarlo.
+          
+          aprovecho para agradecerte por todo lo que has hecho por mí. en esos momentos en los que yo no estaba en mi mejor versión, tú estuviste ahí. no siempre es fácil lidiar con alguien cuando está en sus peores momentos, pero tú lo hiciste, y aunque no sé si te lo he dicho antes, lo valoro muchísimo. no importa si eran palabras de ánimo, un consejo, o simplemente escucharme sin juzgar. todo eso significó más de lo que crees, y no lo voy a olvidar.
+          
+          quiero que hoy, tu día, te tomes el tiempo para disfrutarlo como te dé la gana. haz lo que te haga feliz, rodéate de gente que te sume, ríete mucho, come lo que más te guste, y si puedes, date algún capricho (que para algo es tu cumpleaños, ¿no?). también quiero recordarte que vales muchísimo. a veces parece que no lo tenemos tan presente, pero eres una persona increíblemente fuerte y capaz, aunque puede que no siempre lo veas.
+          
+          en fin, claudia, solo quiero que sepas lo mucho que te aprecio y lo agradecido que estoy de haberte tenido ahí cuando más lo necesitaba. que este nuevo año esté lleno de oportunidades, momentos felices y todo lo bueno que te mereces.
+          
+          disfruta muchísimo tu cumpleaños. pásalo genial.
+          
+          gracias por todo, de verdad.</p>
+      </div>
+    </div>
+  </div>
 
-    <section id="normativa">
-      <img src="normativa.png" alt="Normativa en Costa Urbana" />
-      <div class="subsection">
-        <h2>Introducción</h2>
-        <p></p>Baruserona es un servidor de rol serio dedicado al juego Emergency Response: Liberty County con ideas de expandirse a otras plataformas y llevar el rol a otro nivel.</p>
-<br>
-        <h2>Normativa Discord</h2>
-        <br>
-            <li><b>Art. 1</b> - Respeta a todos los miembros del servidor. No se tolerarán insultos, lenguaje abusivo, acoso, ni cualquier comportamiento que sea considerado inapropiado.</li>
-<br>
-            <li><b>Art. 1.1</b> - No se permite bajo ninguna circunstancia el contenido de naturaleza explícita o NSFW. Esto incluye imágenes, videos, texto y enlaces a contenido para mayores de edad. En caso de detectar este tipo de contenido, se debe reportar con evidencia suficiente para que el equipo de moderación tome las medidas correspondientes.</li>
-<br>
-            <li><b>Art. 1.2</b> - Está prohibido hacer spam en los canales y hacer publicidad de otros servidores o enlaces externos sin permiso o al MD.</li>
-            <br>
-            <li><b>Art. 1.3</b> - Cada canal tiene un propósito específico. Utiliza cada canal de texto o voz según su tema designado y evita el uso de comandos en canales de conversación general. Asimismo, no realices comentarios fuera de tema en canales dedicados a roles específicos, como los de roleplay.</li>
-            <br>
-            <li><b>Art. 1.4</b> - No está permitido divulgar información personal de otros usuarios bajo ninguna circunstancia. La protección de la privacidad es fundamental, y cualquier usuario que comparta información privada de otro sin su consentimiento recibirá un baneo permanente, sin excepciones.</li>
-            <br>
-            <li><b>Art. 1.5</b> - El desconocimiento de las normas no implica el poder saltárselas.</li>
-            <br>
-            <li><b>Art. 1.6</b> - Es fundamental mantener una actitud de respeto hacia todos los miembros del servidor, incluyendo al equipo de moderación y administración. No se tolerará ninguna falta de respeto. El incumplimiento de esta norma puede conllevar sanciones disciplinarias, que van desde advertencias hasta baneos permanentes.</li>
-            <br>
-            <li><b>Art. 1.7</b> - Los comentarios despectivos, insultos o actos de discriminación en función de orientaciones, creencias, identidad, género, o cualquier otra característica personal están estrictamente prohibidos. Cualquier usuario que infrinja esta norma será expulsado (kick), y si la gravedad del caso lo amerita, se procederá con un baneo permanente sin derecho a apelación.</li>
-            <br>
-            <li><b>Art. 1.8</b> - Para mantener una comunicación fluida y ordenada, se establece un límite de cinco líneas por mensaje. Se recomienda evitar mensajes sucesivos; en su lugar, intenta expresar todo en un único mensaje. No se tolerará el flood individual ni en grupo, y hacerlo resultará en medidas correctivas.</li>
-            <br>
-            <li><b>Art. 1.9</b> - En los canales de voz, no se permite hacer ruidos molestos o reproducir audios no deseados, como sonidos altos o "troll". Esto interfiere con la experiencia de los demás y puede generar molestias. El incumplimiento de esta norma puede llevar a restricciones en el uso de estos canales.</li>
-            <br>
-            <li><b>Art. 1.10</b> - Los nicks que sean ofensivos, racistas, vulgares, radicales, hostigadores, homófobos, religiosos, políticos, relacionados con la extrema derecha, pornografía o que hagan referencia a cuestiones o actividades contrarias al derecho o a cualquier tipo de actividad ilegal, referencias o que contengan información sobre trampas, hacks, bots, cheats o cuestiones similares, o que puedan herir la sensibilidad de cualquier persona, sea cual fuera su naturaleza están prohibidos y podrán conllevar la expulsión del servidor sin previo aviso.</li>
-            <br>
-            <li><b>Art. 1.11</b> - El equipo se reserva el criterio de evaluar cualquier tipo de amenaza para estudiarlo detalladamente cada caso de forma individual donde la medida podrá resultar en una exclusión permanente de todos los servicios y plataformas relativos a Baruserona sin posibilidad alguna de reclamación.</li>
-            <br>
-            <li><b>Art. 1.12</b> - El uso de multicuentas esta prohibido.</li>
-            <br>
-            
-            <li><b>Art. 1.13</b> - Los terminos de servicio de discord se deben de seguir al pie de la letra y contarán en la normativa. https://discord.com/terms</li>
-        <br>
-            <h2>Normativa Roleplay | Como rolear</h2>
-        <br>
-        <li><b>Art. 2</b></b> - <b>Valora tu vida  </b> - Tienes que valorar la vida de tu personaje y actuar como si lo hicieses. No valorarla será sancionado. </li>
-        <br>
-        <li><b>Art. 2.1</b> - <b>Evasión de rol </b> - Esta phohibido evadir un rol, entrando en zona segura o desconectandose del servidor. En caso de ser un problema OOC se deberá seguir el rol, en caso de ser imposible se deberá de contactar a las personas del rol con pruebas.</li>
-        <br>
-        <li><b>Art. 2.2</b> - <b>Estado de coma </b> - Estando herido no podemos comunicarnos de ninguna manera. Se pueden enviar alertas a los EMS pero esta prohibido abusar de ellas, si hay EMS y estas en un rol, el suicidio de tu Personaje esta prohibido.</li>
-        <br>
-        <li><b>Art. 2.3</b> - <b>Reportes In-Game </b> - No se podrá detener de ninguna manera el rol. Los reportes son únicamente a través de Discord. Solo serán IG en caso de extrema gravedad.</li>
-        <br>
-        <li><b>Art. 2.4</b> - <b>Llamadas Falsas </b> - Esta prohibido llamar a la policia, EMS o mecanicos falsamente.</li>
-<br>
-        <li><b>Art. 2.5</b> - <b>Multicuentas / Personajes</b> - Esta prohibido cambiar el nombre o aparencia de tu personaje a la ligera, en caso de cambio de nombre debe de ser comunicado.</li>
-        <br>
-        <li><b>Art. 2.6</b> - <b>Exploits / Cheats</b> - Todo uso de hacks, bugs, y demás modificaciones serán sancionadas y estan prohibidas.</li>
-        <br>
-        <li><b>Art. 2.7</b> - <b>Forzar Rol</b> - Queda prohibido forzar rol. Insultar para comenzar un rol agresivo, buscar a la policia, o ir a comisaria a provocar será sancionado.</li>
-        <br>
-        <h2> Normativa Roleplay | Conceptos Generales</h2>
-        <br>
-        <li><b>Art. 3.1</b> - <b>In Character [IC]: </b>Todo lo que sucede dentro de rol e influye en la vida de tu personaje, su desarrollo y en el entorno de la ciudad.</li>
-        <br>
-        <li><b>Art. 3.2</b> - <b>Out Of Character [OOC]: </b>Todo lo que sucede fuera de rol y de la ciudad y nuestro personaje no debe saber de su existencia.</li>
-        <br>
-        <li><b>Art. 3.3</b> - <b>Meta Gaming [MG]: </b>Se considera MG el uso de cualquier información obtenida OOC para ser usada IC. Es sancionable.</li>
-        <br>
-        <li><b>Art. 3.4</b> - <b>Bunny Jump - Zig Zag - Movimiento PVP [BJ] [ZZ] [Mov. PVP]: </b>Se denomina Movimiento PVP al estar realizando movimientos irrealistas al mismo tiempo que disparas en un rol. </li>
-        <br>
-        <li><b>Art. 3.5</b> - <b>Revenge Kill [RK]: </b> Si nuestro personaje ha sido asesinado, no podemos cobrar venganza, puesto que nuestro personaje ha sufrido una pérdida de memoria. Es sancionable.</li>
-        <br>
-        <li><b>Art. 3.6</b> - <b>DeathMatch [DM]: </b>Es el acto de atacar a otro jugador sin una razón adecuada para el roleplay. Es sancionable.</li>
-        <br>
-        <li><b>Art. 3.7</b> - <b>Rol De Entorno [RDE]: </b>Rol De Entorno es todo aquello que rodea a nuestro personaje y tenemos que interpretar y dar por hecho que existe a pesar de que el juego no lo pueda ofrecer.</li>
-        <br>
-        <li><b>Art. 3.8</b> - <b>Power Gaming [PG]: </b>Realizar una acción  que el juego permite pero que sería imposible de realizar en la vida real, sin sentido, lógica o simplemente imposible.</li>
-        <br>
-        <li><b>Art. 3.9</b> - <b>Player Kill [PK]: </b>Supone la muerte del personaje, considerado como un estado de coma, esto hace que olvides todo lo sucedido en el rol anterior. </li>
-        <br>
-        <li><b>Art. 3.10</b> - <b>Uso /me y /do: </b>/me: Se utiliza para acciones que no tengan animaciones dentro del juego. /do: Se usa para representar en tercera persona al entorno de tu personaje, gestos, movimientos, lo que ve y su estado vital. </li>        
-        <br>
-        <li><b>Art. 3.11</b> - <b>Character Kill [CK]: </b>Es la muerte permanente de tu personaje, conlleva a la perdida de todas tus posesiones.</li>
-        <br>
-        <li><b>Art. 3.12</b> - <b>Fair Play [FP]: </b>Es el juego limpio, respetar las normas del servidor y que por ambas partes se disfrute del mismo roleplay. </li>
-        <br>
-        <li><b>Art. 3.13</b> - <b>Insultos Out Of Character [IOOC]: </b>Son los insultos a otra persona fuera de rol.</li>
-        <br>
-        <li><b>Art. 3.14</b> - <b>Evadir Rol [ER]: </b>Consideramos evasión de rol cuando un jugador evita ciertos roles de manera forzada, buscando su propio beneficio. Si usted esta involucrado en un rol, no podrá retirarse del mismo hasta finalizarlo.</li>
-        <br>
-        <li><b>Art. 3.15</b> - <b>Evadir Kill [EK]: </b>Consideramos evasión de muerte cuando un jugador evita que su personaje sea abatido.</li>
-        <br>
-        <li><b>Art. 3.16</b> - <b>No Valorar La Vida de tu Personaje [NVVPJ]: </b>Hacer cualquier cosa que arriesgue la vida de tu personaje.</li>
-        <br>
-        <li><b>Art. 3.17</b> - <b>Forzar Rol [FR]: </b>Consideramos forzar rol cuando un jugador quiere cambiar o definir el rumbo de un rol o una historia con acciones forzadas, sin importar la lógica de un rol, buscando su propio beneficio.</li>
-        <br>
-        <li><b>Art. 3.18</b> - <b>Bad Driving [BD]: </b>Conducir de manera incorrecta como ir por la acera.</li>
-        <br>
-        <li><b>Art. 3.19</b> - <b>Noob Abuse [NA]: </b>Abusar de un jugador nuevo en el servidor.</li>
-        <br>
-        <li><b>Art. 3.20</b> - <b>Bug Abuse [BA]: </b>Abusar de un error del propio juego para propio beneficio.</li>
-        <br>
-        <li><b>Art. 3.21</b> - <b>Team Kill [TK]: </b>Asesinar jugadores de tu misma facción legal o ilegal.</li>
-        <br>
-        <li><b>Art. 3.22</b> - <b>Lag Abuser [LA]: </b>Abusar de tu lag o el del servidor.</li>
-        <br>
-        <li><b>Art. 3.22</b> - <b>No Rolear Choque [NRC]: </b>No hacer rol o simplemente poner "agh" cuando te has chocado a más de 50 MPH es No Rolear Choque.</li>
-        <br>
+  <audio id="bg-music" loop>
+    <source src="musica.mp3" type="audio/mp3">
+    Tu navegador no soporta el reproductor de audio.
+  </audio>
 
-        <h2>Normativa - PJ</h2>
-        <br>
-        <li><b>Art. 4.1</b> - <b>Skin Diferente:</b> Cada PJ deberá tener una apariencia o piel distinta para diferenciarse entre sí.</li>
-        <br>
-        <li><b>Art. 4.2</b> - <b>Siendo Jefe:</b> Los jefes de facción legal tienen prohibido pertenecer a mafias, bandas o pandillas.</li>
-        <br>
-        <li><b>Art. 4.3</b> - <b>Prohibición de Meta Gaming:</b> No se permite que los personajes compartan información entre ellos, independientemente de si ambos son legales o ilegales.</li>
-        <br>
-        <li><b>Art. 4.4</b> - <b>Transferencia de Dinero entre Personajes:</b> Está estrictamente prohibida la transferencia de dinero o inventario entre diferentes cuentas o personajes.</li>
-        <br>
-        <li><b>Art. 4.5</b> - <b>Desarrollo de Personaje:</b> Cada personaje debe tener una historia y personalidad coherente y no debe realizar acciones que no concuerden con su rol establecido.</li>
-        <br>
-        <li><b>Art. 4.6</b> - <b>Prohibición de Revenge Kill:</b> No se permite que un personaje busque venganza contra otro jugador que lo haya matado previamente en rol.</li>
-        <br>
-        <li><b>Art. 4.7</b> - <b>Límite de Conexiones:</b> Los personajes no deben conectarse de manera coordinada para evitar conflictos de rol o abusos de mecánicas.</li>
-        <br>
-        <li><b>Art. 4.8</b> - <b>Respeto a los Tiempos de Rol:</b> Los personajes deben respetar los tiempos de espera entre roles, especialmente al cambiar de un rol legal a uno ilegal o viceversa.</li>
-        <br>
+  <script>
+    let slideIndex = 0;
+    const slides = document.querySelectorAll('.slide');
+    const presentationContainer = document.getElementById('presentation-container');
+    const music = document.getElementById('bg-music');
+  
+    function startPresentation() {
+      document.getElementById('intro').style.display = 'none';
+      presentationContainer.style.display = 'block';
+      music.play();
+      showNextSlide();
+    }
+  
+    function showNextSlide() {
+      if (slideIndex < slides.length) {
+        const currentSlide = slides[slideIndex];
+        currentSlide.classList.add('show');
+  
+
+        const textContainer = currentSlide.querySelector(".text-container");
+        const image = currentSlide.querySelector("img");
+        const text = textContainer.textContent; 
+        textContainer.textContent = ""; 
+  
+        image.style.transition = "opacity 2s ease-in-out";
+        image.style.opacity = "1";
+  
+        let charIndex = 0;
+        function typeWriter() {
+          if (charIndex < text.length) {
+            textContainer.textContent += text[charIndex];
+            charIndex++;
+            setTimeout(typeWriter, 50); 
+          }
+        }
         
-
-        <h2>Normativa - Facciones Legales</h2>
-        <br>
-    <li><b>Art. 5.1</b> - Cada facción tendrá una sola jefatura, designada por la administración o mediante procesos establecidos.</li>
-    <br>
-    <li><b>Art. 5.2</b> - Los agentes solo pueden desenfundar sus armas cuando enfrenten a un sospechoso armado y en situaciones justificadas.</li>
-    <br>
-    <li><b>Art. 5.3</b> - Se fomenta la colaboración entre facciones legales, pero siempre respetando las funciones y competencias de cada una para evitar conflictos de autoridad.</li>
-    <br>
-    <li><b>Art. 5.4</b> - Es obligatorio leer los derechos al detenido antes de proceder con su arresto y traslado a prisión; de lo contrario, el detenido deberá ser liberado.</li>
-    <br>
-    <li><b>Art. 5.5</b> - Las facciones legales se consideran empleos primarios; cada jugador solo puede pertenecer a una facción a la vez. No es posible ser simultáneamente parte de la policía y de EMS u otra facción legal.</li>
-    <br>
-    <li><b>Art. 5.6</b> - El abuso de poder por parte de los líderes de cualquier facción está prohibido y será sancionado.</li>
-    <br>
-    <li><b>Art. 5.7</b> - Está prohibido disparar a las ruedas de vehículos, causar explosiones, o utilizar la fuerza letal contra sospechosos que no representen una amenaza inmediata para otras vidas.</li>
-    <br>
-    <li><b>Art. 5.8</b> - Los líderes de facciones legales deberán obtener aprobación de la administración para crear subdivisiones, roles adicionales o realizar modificaciones importantes en la estructura de la facción.</li>
-    <br>
-    <li><b>Art. 5.9</b> - Los miembros de facciones legales tienen prohibido participar en actos delictivos mientras formen parte de una facción legal.</li>
-    <br>
-    <li><b>Art. 5.10</b> - Los líderes de facción deben respetar la independencia de otras facciones legales. No está permitido que un jefe de facción tome decisiones o imponga órdenes en otra facción.</li>
-    <br>
-    <li><b>Art. 5.11</b> - El uso de vehículos de facción debe ser exclusivo para tareas de servicio y operativos. Se prohíbe su utilización para fines personales o fuera del contexto de rol.</li>
-    <br>
-    <li><b>Art. 5.12</b> - Está prohibido realizar intercepciones de vehículos de manera imprudente, poniendo en riesgo la vida del personaje sin valorar la situación.</li>
-    <br>
-    <li><b>Art. 5.13</b> - Las actividades de corrupción dentro de una facción legal están permitidas, pero deben notificarse previamente a la administración para su aprobación.</li>
-    <br>
-    <li><b>Art. 5.14</b> - Los miembros de las facciones legales deben mantener un comportamiento profesional en todo momento, evitando acciones que puedan dañar la imagen de la facción o del servidor.</li>
-    <br>
-    <li><b>Art. 5.15</b> - Todos los miembros de facciones legales deben actuar conforme a las leyes y normativas del servidor, sin excepción.</li>
-    <br>
-    <li><b>Art. 5.16</b> - No se permite realizar procesos de oposición de carácter privado para el ingreso a las facciones.</li>
-    <br>
-    <li><b>Art. 5.17</b> - El incumplimiento de acuerdos durante negociaciones en situaciones de robo está estrictamente prohibido.</li>
-    <br>
-    <li><b>Art. 5.18</b> - El uso de la maniobra PIT solo está permitido luego de transcurridos 5 minutos de persecución, salvo en situaciones de peligro extremo.</li>
-    <br>
-    <li><b>Art. 5.19</b> - Las facciones policiales no pueden detener a miembros de otras facciones legales, aunque sí pueden imponer sanciones administrativas cuando sea necesario.</li>
-    <br>
-    <li><b>Art. 5.20</b> - Todos los agentes de la ley deben portar una cámara corporal (bodycam) operativa en todo momento, sin posibilidad de desactivarla o manipularla.</li>
-    <br>
-
-    <h2>Normativa - Atracos</h2>
-    <br>
-    <li><b>Art. 6.1</b> - Antes de iniciar un atraco, es obligatorio confirmar la disponibilidad de policías activos.</li>
-    <br>
-    <li><b>Art. 6.2</b> - La duración máxima de un secuestro es de 1 hora. Al cumplirse este tiempo, la persona retenida debe ser liberada.</li>
-    <br>
-    <li><b>Art. 6.3</b> - Las persecuciones tienen una duración máxima de 20 minutos, tanto para atracadores como para policías. Pasado este tiempo, no se podrá continuar la búsqueda.</li>
-    <br>
-    <li><b>Art. 6.4</b> - Está permitido retirar accesorios, ropa y otros objetos del inventario de la persona secuestrada o atracada.</li>
-    <br>
-    <li><b>Art. 6.5</b> - Debe haber un intervalo de al menos 30 minutos entre secuestros, sin importar si los perpetradores pertenecen a diferentes mafias, bandas o si son individuos distintos.</li>
-    <br>
-    <li><b>Art. 6.6</b> - Está prohibido matar a un rehén que colabore y no se permite usar a amigos como rehenes.</li>
-    <br>
-    <li><b>Art. 6.7</b> - Durante un secuestro, deben darse 3 avisos al rehén, cada uno con una duración de entre 25 y 30 segundos. El tiempo de aviso comienza a contarse cuando el rehén baja del vehículo, si aplica. El asesinato sin causa será sancionado.</li>
-    <br>
-    <li><b>Art. 6.8</b> - Los robos de vehículos deben ser roleados adecuadamente, con al menos 3 policías activos y respetando el entorno.</li>
-    <br>
-    <li><b>Art. 6.9</b> - La puja mínima para la liberación de un rehén es de 5.000 €, siendo el máximo negociable de 50.000 €.</li>
-    <br>
-    <li><b>Art. 6.10</b> - Si un rehén es asesinado, la policía podrá llevar a cabo cualquier tipo de operaciones. Pasados 45 minutos desde el inicio del atraco, la policía tendrá el mismo permiso.</li>
-    <br>
-    <li><b>Art. 6.11</b> - Solo está permitido robar el dinero en efectivo que la persona atracada lleve consigo en ese momento.</li>
-    <br>
-    <li><b>Art. 6.12</b> - Está prohibido mantenerse en un área determinada ("campear") por más de 20 a 25 minutos.</li>
-    <br>
-    <li><b>Art. 6.13</b> - Para atracar a personas diferentes, deben pasar al menos 15 minutos entre atracos. Para atracar a la misma persona nuevamente, debe pasar al menos 1 hora.</li>
-    <br>
-    
-
-    <h2>Normativa - Robos / Secuestros</h2>
-  <br>
-<li><b>Art. 7.1</b> - Para realizar un atraco a un civil es necesario que haya un mínimo de 3 policías en servicio.</li>
-<br>
-<li><b>Art. 7.2</b> - En caso de planificar un secuestro a un policía, debe haber un mínimo de 5 policías en servicio.</li>
-<br>
-<li><b>Art. 7.3</b> - En el robo a una gasolinera o tienda, el monto máximo a obtener será de 35.000 €. La cantidad de atracadores permitida oscila entre un mínimo de 2 y un máximo de 3. Solo puede haber un rehén, y si se llega a un acuerdo de tiroteo, no se recibirá ningún beneficio económico. Está prohibido romper la negociación una vez se haya entregado el dinero. Solo se permite el uso de pistolas, tanto para atracadores como para policías, y está prohibido el uso de tiradores especializados. Debe haber un mínimo de 4 policías en servicio.</li>
-<br>
-<li><b>Art. 7.4</b> - En el robo a una joyería, el monto máximo a obtener será de 85.000 €. Se permite un mínimo de 4 y un máximo de 6 atracadores, con hasta 4 rehenes. Solo se permite un tirador, y debe haber al menos 5 policías en servicio.</li>
-<br> 
-<li><b>Art. 7.5</b> - En el robo a un banco, el monto máximo a obtener será de 350.000 €. La cantidad de atracadores permitida varía entre un mínimo de 6 y un máximo de 10. Se permite el uso de fusiles de asalto y un francotirador. El número de rehenes permitido es de hasta 10, con un solo tirador autorizado. Debe haber un mínimo de 7 policías en servicio.</li>
-<br>
-    
-<h2>Normativa - Facciones Ilegales</h2>
-<br>
-<li><b>Art. 8.1</b> - Todas las facciones ilegales deben mantener un rol serio y adecuado. La administración se reserva el derecho de tomar medidas, llegando incluso a eliminar la Mafia, Banda o Pandilla en caso de incumplimiento.</li>
-<br>
-<li><b>Art. 8.2</b> - Está prohibido anunciar públicamente la pertenencia a una mafia.</li>
-<br>
-<li><b>Art. 8.3</b> - Las facciones ilegales no pueden iniciar roles agresivos contra la policía. Perseguir o disparar a agentes de la ley sin justificación será objeto de sanción.</li>
-<br>
-<li><b>Art. 8.4</b> - Cada facción ilegal cuenta con una sede donde ejerce su autoridad. Por lo tanto, pueden ser abatidos, siempre que se realicen los avisos correspondientes.</li>
-<br>
-<li><b>Art. 8.5</b> - Solo se permite tener una única mafia aliada. Se pueden establecer acuerdos comerciales, pero no se permiten regalos de armas, drogas o dinero sin compensación. La facción ilegal puede ofrecer protección a su facción aliada.</li>
-<br>
-<li><b>Art. 8.6</b> - El número máximo de miembros por facción ilegal es de 15. El número máximo de participantes en un acto criminal es de 8. En caso de conflicto entre facciones ilegales, los equipos deben ser equitativos; un enfrentamiento de 12 contra 6 no está permitido.</li>
-<br>
-<h2>Normativa Facciones Ilegales - Guerras</h2>
-<br>
-<li><b>Art. 8.7</b> - Para iniciar una guerra, debe existir un motivo justificado, como un asesinato o un secuestro.</li>
-<br>
-<li><b>Art. 8.8</b> - Está prohibido matar sin previo aviso. Se debe priorizar la rendición del adversario y su entrega de bienes; si no aceptan, se podrá iniciar un tiroteo.</li>
-<br>
-<li><b>Art. 8.9</b> - Para dar por concluida una guerra, una de las facciones ilegales debe rendirse.</li>
-<br>
-<li><b>Art. 8.10</b> - Las facciones ilegales pueden secuestrarse entre sí y solicitar rescates a las facciones enemigas. Si un mafioso es secuestrado y muere, se deberá realizar un PKT. Tanto la mafia propia como la enemiga deberán evaluar la situación del rehén.</li>
-
-
-    </div>
-    </section>
-
-    <section id="informacion">
-      <img src="Informacion.png" alt="Información de Costa Urbana" />
-      <p>Aquí encontrarás toda la información adicional, incluyendo horarios de eventos y guías de usuario.</p>
-      <br>
-      <h2>Información Adicional a Tener en Cuenta:</h2>
-      <br>
-      <li>El uso de botiquines está limitado a uno por patrulla en el caso de las fuerzas de seguridad. Los civiles y criminales pueden adquirir botiquines en el hospital o interceptando cargamentos destinados a este.</li>
-      <br>
-      <li>Los chalecos deben adquirirse en la tienda de Discord. Cada chaleco solo puede usarse una vez por rol, y es necesario comprar uno nuevo si se ha utilizado en rol mediante la acción "/do el chaleco haría efecto". La adquisición debe ser documentada en el canal correspondiente.</li>
-      <br>
-      <li>La administración se reserva el derecho de sancionar cualquier acción que considere inapropiada, incluso si no está explícitamente incluida en la normativa.</li>
-      <br>
-      <li>La normativa puede actualizarse en cualquier momento sin previo aviso. Es responsabilidad de cada jugador revisarla periódicamente.</li>
-      <br>
-      <li>Es obligatorio realizar un rol de transporte de armamento desde la armería hasta la comisaría para trasladar equipamiento como armas y chalecos al personal policial.</li>
-      <br>
-      <li>Está permitido transportar a compañeros caídos solo si no hay testigos en la escena o si todos los presentes están incapacitados. Por ejemplo, en caso de un enfrentamiento, si solo queda un miembro de la mafia en pie y todos los agentes están abatidos, el miembro puede llevar a sus compañeros al hospital uno por uno. Esta regla también se aplica a la policía.</li>
-      <br>
-      <li>Si eres abatido, deberás esperar un mínimo de 5 minutos antes de reaparecer. Este tiempo comenzará al finalizar el rol y solo podrá cumplirse en una zona sin personas activas alrededor (los abatidos no cuentan). Si hay personal de EMS en la escena, el tiempo de espera aumenta a 10 minutos. No está permitido reaparecer si hay personas cerca.</li>
-      <br>
-      <li>Esta sección forma parte integral de la normativa y debe cumplirse en todo momento.</li>
-      <br>
-      <li><b>Los conceptos de roleplay se deben de cumplir estrictamente.</b></li>
-      <br>
-      <li><b>Una sanción corresponde a un baneo del juego respecto a la gravedad de la sanción.</b></li>
-      
-
-    </section>
-  </main>
-
+        setTimeout(typeWriter, 75);
+  
+        setTimeout(() => {
+          slideIndex++;
+          if (slideIndex < slides.length) {
+            showNextSlide();
+          }
+        }, 5000);
+      }
+    }
+  </script>
 </body>
 </html>
